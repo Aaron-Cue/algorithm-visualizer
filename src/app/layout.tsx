@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Header from '@/components/Header'
 
 import '../styles/globals.css'
 
@@ -72,12 +73,16 @@ const inter = Inter({
 
 export default function RootLayout({
   children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} antialiased`}>
+        <Header />
+        {children}
+        <footer className="bg-zinc-900 text-white text-center py-4">
+          <p className="text-sm">@ 2025 Aaron-Cue 🩵</p>
+        </footer>
+      </body>
     </html>
   )
 }
