@@ -1,12 +1,29 @@
+import Card from '@/components/Card'
+import cardsInfo from '@/data/typeAlgorithms'
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[70px_1fr_50px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="">
-        AlgoView
-      </main>
-      <footer className="">
-        footer
-      </footer>
-    </div>
+    <main className="container mx-auto px-6 max-w-7xl sm:px-8 md:px-12 lg:px-16">
+      <section className="my-24">
+        <h1 className="text-7xl font-medium my-2">Algorithm Visualizer</h1>
+        <p className="text-2xl text-gray-700">
+          Explore and learn about sorting, searching, graph algorithms, and more
+          with animations and pseudocode!
+        </p>
+      </section>
+      <section className="mt-20 mb-32 grid gap-8 grid-cols-[repeat(auto-fit,_minmax(300px,_1fr))] justify-items-center lg:grid-cols-3">
+        {cardsInfo.map(card => (
+          <Card
+            key={card.title}
+            image={card.image}
+            title={card.title}
+            description={card.description}
+            width={card.width}
+            height={card.height}
+            href={card.href}
+          />
+        ))}
+      </section>
+    </main>
   )
 }
