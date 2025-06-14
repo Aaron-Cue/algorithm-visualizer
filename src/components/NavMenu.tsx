@@ -2,20 +2,41 @@ import React from 'react'
 import NavItem from './NavItem'
 import SubNavItem from './SubNavItem'
 
-export default function NavMenu({className}: {className: string}) {
+export default function NavMenu({
+  className,
+  setOpen
+}: {
+  className: string
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>
+}) {
   return (
     <nav className={className}>
       <NavItem href="#" label="Sorting">
-        <SubNavItem subItems={['Selection', 'Insertion', 'Bubble', 'Quick', 'Merge', 'Counting', 'Bucket']} />
+        <SubNavItem
+          setOpen={setOpen}
+          subItems={[
+            'Selection',
+            'Insertion',
+            'Bubble',
+            'Quick',
+            'Merge',
+            'Counting',
+            'Bucket'
+          ]}
+        />
       </NavItem>
       <NavItem href="#" label="Searching">
-        <SubNavItem subItems={['Linear-Search', 'Binary-Search']} />
+        <SubNavItem
+          setOpen={setOpen}
+          subItems={['Linear-Search', 'Binary-Search']}
+        />
       </NavItem>
       <NavItem href="#" label="Trees">
-        <SubNavItem subItems={['Bst', 'Avl', 'Trie']} />
+        <SubNavItem setOpen={setOpen} subItems={['Bst', 'Avl', 'Trie']} />
       </NavItem>
       <NavItem href="#" label="Graphs">
         <SubNavItem
+          setOpen={setOpen}
           subItems={[
             'Bfs',
             'Dfs',
@@ -27,7 +48,10 @@ export default function NavMenu({className}: {className: string}) {
         />
       </NavItem>
       <NavItem href="#" label="Other">
-        <SubNavItem subItems={['Dynamic-Programming', 'Backtracking', 'Greedy']} />
+        <SubNavItem
+          setOpen={setOpen}
+          subItems={['Dynamic-Programming', 'Backtracking', 'Greedy']}
+        />
       </NavItem>
     </nav>
   )

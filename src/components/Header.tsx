@@ -38,11 +38,11 @@ export default function Navbar() {
           </a>
         </div>
 
-        <NavMenu className="hidden md:flex space-x-6 md:mr-16" />
+        <NavMenu className="hidden md:flex space-x-6 md:mr-16" setOpen={setOpen} />
       </div>
 
       {open && (
-        <NavMenu className="md:hidden p-5 bg-zinc-300 rounded-xl space-y-2 absolute top-18 left-0 text-lg font-medium" />
+        <NavMenu className="md:hidden p-5 bg-zinc-300 rounded-xl space-y-2 absolute top-18 left-0 text-lg font-medium" setOpen={setOpen} />
       )}
     </header>
   )

@@ -2,9 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 
 export default function SubNavItem({
-  subItems
+  subItems, setOpen
 }: {
-  subItems: string[]
+    subItems: string[],
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) {
   return (
     <div
@@ -15,6 +16,7 @@ export default function SubNavItem({
           key={subItem}
           href={`/${subItem}`}
           className="block hover:bg-gray-600 rounded px-2 py-1"
+          onClick={() => setOpen(false)}
         >
           {subItem}
         </Link>
