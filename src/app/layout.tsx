@@ -76,9 +76,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className} antialiased min-h-dvh flex flex-col`}>
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
         <footer className="bg-zinc-900 text-white text-center py-4">
           <p className="text-sm">@ 2025 Aaron-Cue 🩵</p>
         </footer>

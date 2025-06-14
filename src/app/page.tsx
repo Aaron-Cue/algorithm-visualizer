@@ -3,7 +3,7 @@ import cardsInfo from '@/data/typeAlgorithms'
 
 export default function Home() {
   return (
-    <main className="container mx-auto px-6 max-w-7xl sm:px-8 md:px-12 lg:px-16">
+    <div className="container mx-auto px-6 max-w-7xl sm:px-8 md:px-12 lg:px-16">
       <section className="my-24">
         <h1 className="text-7xl font-medium my-2">Algorithm Visualizer</h1>
         <p className="text-2xl text-gray-700">
@@ -24,6 +24,6 @@ export default function Home() {
           />
         ))}
       </section>
-    </main>
+    </div>
   )
 }

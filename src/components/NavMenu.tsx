@@ -9,7 +9,7 @@ export default function NavMenu({className}: {className: string}) {
         <SubNavItem subItems={['Selection', 'Insertion', 'Bubble', 'Quick', 'Merge', 'Counting', 'Bucket']} />
       </NavItem>
       <NavItem href="#" label="Searching">
-        <SubNavItem subItems={['Lineal Search', 'Binary Search']} />
+        <SubNavItem subItems={['Linear-Search', 'Binary-Search']} />
       </NavItem>
       <NavItem href="#" label="Trees">
         <SubNavItem subItems={['Bst', 'Avl', 'Trie']} />
@@ -27,7 +27,7 @@ export default function NavMenu({className}: {className: string}) {
         />
       </NavItem>
       <NavItem href="#" label="Other">
-        <SubNavItem subItems={['Dynamic Programming', 'Backtracking', 'Greedy']} />
+        <SubNavItem subItems={['Dynamic-Programming', 'Backtracking', 'Greedy']} />
       </NavItem>
     </nav>
   )
