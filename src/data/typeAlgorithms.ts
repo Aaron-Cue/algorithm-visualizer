@@ -13,7 +13,7 @@ const typeAlgorithms: Array<{
       'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
     width: 300,
     height: 200,
-    href: '/',
+    href: '/'
   },
   {
     image: '/recursion.jpg',
@@ -22,7 +22,7 @@ const typeAlgorithms: Array<{
       'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
     width: 300,
     height: 200,
-    href: '/',
+    href: '/'
   },
   {
     image: '/recursion.jpg',
@@ -31,7 +31,7 @@ const typeAlgorithms: Array<{
       'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
     width: 300,
     height: 200,
-    href: '/',
+    href: '/'
   },
   {
     image: '/recursion.jpg',
@@ -40,7 +40,25 @@ const typeAlgorithms: Array<{
       'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
     width: 300,
     height: 200,
-    href: '/',
+    href: '/'
+  },
+  {
+    image: '/recursion.jpg',
+    title: 'Backtracking',
+    description:
+      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
+    width: 300,
+    height: 200,
+    href: '/'
+  },
+  {
+    image: '/recursion.jpg',
+    title: 'Greedy',
+    description:
+      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
+    width: 300,
+    height: 200,
+    href: '/'
   }
 ]
 

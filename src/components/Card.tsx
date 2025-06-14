@@ -19,7 +19,7 @@ export default function Card({
   href
 }: CardProps) {
   return (
-    <article className="rounded-xl border border-zinc-100 shadow-xl overflow-hidden transition-shadow hover:shadow-2xs h-full flex flex-col max-w-md">
+    <article className="rounded-xl border border-zinc-100 shadow-md overflow-hidden transition-shadow hover:shadow-lg h-full flex flex-col max-w-md">
       <Link href={href} className="cursor-pointer">
         <div className="relative w-full h-52">
           <Image

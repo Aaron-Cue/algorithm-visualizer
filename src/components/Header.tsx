@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
+import Link from 'next/link'
 import BurgaButton from '@/components/BurgaButton'
-import HeaderDesktopMenu from '@/components/HeaderDesktopMenu'
-import HeaderMobileMenu from '@/components/HeaderMobileMenu'
+import NavMenu from '@/components/NavMenu'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -13,11 +13,13 @@ export default function Navbar() {
         <BurgaButton open={open} setOpen={setOpen} />
 
         {/* Logo */}
-        <div className="text-[26px] font-bold italic">AlgoView</div>
+        <div className="text-[26px] font-bold italic cursor-pointer">
+          <Link href="/">AlgoView</Link>
+        </div>
 
         {/* gh icon */}
         <div className="md:order-1 mr-8">
-          <a href="https://github.com/Aaron-Cue">
+          <a href="https://github.com/Aaron-Cue" target='_blank' rel="noopener noreferrer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -36,11 +38,11 @@ export default function Navbar() {
           </a>
         </div>
 
-        <HeaderDesktopMenu />
+        <NavMenu className="hidden md:flex space-x-6 md:mr-16" />
       </div>
 
       {open && (
-        <HeaderMobileMenu />
+        <NavMenu className="md:hidden p-5 bg-zinc-300 rounded-xl space-y-2 absolute top-18 left-0 text-lg font-medium" />
       )}
     </header>
   )
