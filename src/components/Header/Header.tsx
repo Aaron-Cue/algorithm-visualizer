@@ -1,8 +1,8 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import BurgaButton from '@/components/BurgaButton'
-import NavMenu from '@/components/NavMenu'
+import BurgaButton from '@/components/Header/BurgaButton'
+import NavMenu from '@/components/Header/NavMenu'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
