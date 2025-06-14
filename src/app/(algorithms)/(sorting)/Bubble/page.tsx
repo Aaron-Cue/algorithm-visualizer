@@ -1,5 +1,6 @@
 import React from 'react'
 import AlgorithmWrapperPage from '@/components/Algorithms/AlgorithmWrapperPage'
+import BubbleAnimation from '@/components/Algorithms/Animations/Sorting/Bubble'
 
 export default function page() {
   return (
@@ -7,7 +8,7 @@ export default function page() {
       title={'Bubble Sort'}
       info={'info COMPONENT'}
     >
-      animation BUBBLE component
+      <BubbleAnimation />
     </AlgorithmWrapperPage>
   )
 }
