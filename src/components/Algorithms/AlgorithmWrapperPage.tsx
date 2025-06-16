@@ -7,12 +7,12 @@ export default function AlgorithmWrapperPage({
 }: {
   title: string
   children: React.ReactNode
-  info: string
+  info: React.ReactNode
 }) {
   return (
     <>
       <h1 className='text-4xl font-bold italic mb-12'>{title}</h1>
-      <section className='my-12 p-2'>{children}</section>
+      <section className='my-12 p-2 border-1'>{children}</section>
       <div>{info}</div>
     </>
   )
