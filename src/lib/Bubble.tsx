@@ -1,8 +1,4 @@
-type Action = {
-  type: 'compare' | 'swap' | 'set'
-  indices: number[]
-  values?: number[]
-}
+import { Action } from '@/types/algorithms'
 
 export function getBubbleSortSteps(arr: number[]): Action[] {
   const steps: Action[] = []
