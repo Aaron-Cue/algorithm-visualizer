@@ -42,7 +42,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <NavMenu className="md:hidden p-5 bg-zinc-300 rounded-xl space-y-2 absolute top-18 left-0 text-lg font-medium" setOpen={setOpen} />
+        <NavMenu className="md:hidden p-5 bg-zinc-300 rounded-xl space-y-2 absolute top-18 left-0 text-lg font-medium z-100" setOpen={setOpen} />
       )}
     </header>
   )

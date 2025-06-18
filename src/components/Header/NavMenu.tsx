@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavItem from './NavItem'
-import SubNavItem from './SubNavItem'
 
 export default function NavMenu({
   className,
@@ -9,50 +8,65 @@ export default function NavMenu({
   className: string
   setOpen: React.Dispatch<React.SetStateAction<boolean>>
 }) {
+  const [activeMenu, setActiveMenu] = useState<string | null>(null)
+
   return (
     <nav className={className}>
-      <NavItem href="#" label="Sorting">
-        <SubNavItem
-          setOpen={setOpen}
-          subItems={[
-            'Selection',
-            'Insertion',
-            'Bubble',
-            'Quick',
-            'Merge',
-            'Counting',
-            'Bucket'
-          ]}
-        />
-      </NavItem>
-      <NavItem href="#" label="Searching">
-        <SubNavItem
-          setOpen={setOpen}
-          subItems={['Linear-Search', 'Binary-Search']}
-        />
-      </NavItem>
-      <NavItem href="#" label="Trees">
-        <SubNavItem setOpen={setOpen} subItems={['Bst', 'Avl', 'Trie']} />
-      </NavItem>
-      <NavItem href="#" label="Graphs">
-        <SubNavItem
-          setOpen={setOpen}
-          subItems={[
-            'Bfs',
-            'Dfs',
-            'Dijkstra',
-            'Bellman-Ford',
-            'Floyd-Warshall',
-            'Kruskal'
-          ]}
-        />
-      </NavItem>
-      <NavItem href="#" label="Other">
-        <SubNavItem
-          setOpen={setOpen}
-          subItems={['Dynamic-Programming', 'Backtracking', 'Greedy']}
-        />
-      </NavItem>
+      <NavItem
+        href="#"
+        label="Sorting"
+        setOpen={setOpen}
+        subItems={[
+          'Selection',
+          'Insertion',
+          'Bubble',
+          'Quick',
+          'Merge',
+          'Counting',
+          'Bucket'
+        ]}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
+      <NavItem
+        href="#"
+        label="Searching"
+        setOpen={setOpen}
+        subItems={['Linear-Search', 'Binary-Search']}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
+      <NavItem
+        href="#"
+        label="Trees"
+        setOpen={setOpen}
+        subItems={['Bst', 'Avl', 'Trie']}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
+      <NavItem
+        href="#"
+        label="Graphs"
+        setOpen={setOpen}
+        subItems={[
+          'Bfs',
+          'Dfs',
+          'Dijkstra',
+          'Bellman-Ford',
+          'Floyd-Warshall',
+          'Kruskal'
+        ]}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
+      <NavItem
+        href="#"
+        label="Other"
+        setOpen={setOpen}
+        subItems={['Dynamic-Programming', 'Backtracking', 'Greedy']}
+        activeMenu={activeMenu}
+        setActiveMenu={setActiveMenu}
+      />
     </nav>
   )
 }
