@@ -7,58 +7,58 @@ const typeAlgorithms: Array<{
   href: string
 }> = [
   {
-    image: '/recursion.jpg',
+    image: '/sorting.jpeg',
     title: 'Sorting Algorithms',
     description:
       'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
-    width: 300,
-    height: 200,
-    href: '/'
+    width: 3488,
+    height: 2544,
+    href: '/Bubble'
   },
   {
-    image: '/recursion.jpg',
+    image: '/searching.webp',
     title: 'Searching Algorithms',
     description:
-      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
-    width: 300,
-    height: 200,
-    href: '/'
+      'Visualize different searching techniques like Linear Search, Binary Search, and more.',
+    width: 720,
+    height: 405,
+    href: '/Binary-Search'
   },
   {
-    image: '/recursion.jpg',
+    image: '/trees.webp',
     title: 'Trees',
     description:
-      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
-    width: 300,
-    height: 200,
-    href: '/'
+      'Explore tree algorithms like Traversals, Binary Search Trees, AVL Trees, and more.',
+    width: 900,
+    height: 430,
+    href: '/Bst'
   },
   {
-    image: '/recursion.jpg',
+    image: '/graphs.avif',
     title: 'Graphs',
     description:
-      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
-    width: 300,
-    height: 200,
-    href: '/'
+      'Learn graph algorithms including BFS, DFS, Dijkstra’s Algorithm, and more.',
+    width: 1280,
+    height: 720,
+    href: '/Dijkstra'
   },
   {
-    image: '/recursion.jpg',
+    image: '/bt.png',
     title: 'Backtracking',
     description:
-      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
-    width: 300,
-    height: 200,
-    href: '/'
+      'Understand backtracking solutions like N-Queens, Sudoku Solver, and more.',
+    width: 768,
+    height: 422,
+    href: '/Backtracking'
   },
   {
-    image: '/recursion.jpg',
-    title: 'Greedy',
+    image: '/dp.webp',
+    title: 'Dynamic Programming',
     description:
-      'Visualize various sorting algorithms like Bubble Sort, Quick Sort, Merge Sort, and more.',
-    width: 300,
-    height: 200,
-    href: '/'
+      'Understand the basics of dynamic programming with simple examples.',
+    width: 966,
+    height: 523,
+    href: '/Dynamic-Programming'
   }
 ]
 

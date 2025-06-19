@@ -1,7 +1,5 @@
 import React from 'react'
 
 export default function page() {
-  return (
-    <div>greedy page</div>
-  )
+  return <div>Page not available This feature is currently in development.</div>
 }

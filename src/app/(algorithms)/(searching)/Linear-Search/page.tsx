@@ -1,5 +1,5 @@
 import React from 'react'
 
 export default function page() {
-  return <div>linear search page</div>
+  return <div>Page not available This feature is currently in development.</div>
 }
