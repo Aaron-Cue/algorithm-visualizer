@@ -1,11 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import ButtonController from '@/components/Controls/ButtonController'
-import SelectSize from '@/components/Controls/Select'
-import Slider from '@/components/Controls/Slider'
 import { getBubbleSortSteps } from '@/lib/Bubble'
 import { Action } from '@/types/algorithms'
-import { getRandomArray } from '@/utils/getRandomArray'
+import SortingControllers from '../Controls/SortingControllers'
 
 const algorithmMap: Record<string, (arr: number[]) => Action[]> = {
   bubble: getBubbleSortSteps
@@ -50,49 +47,21 @@ export default function AnimationWrapper({
     setIsPlaying(false)
   }
 
-  const handleRestart = () => {
-    const newValues =
-      randomValues.length > 0 ? [...randomValues] : [...baseValues]
-    setValues(newValues)
-    animate([...newValues])
-  }
-
-  const handleRandomize = () => {
-    const randomArray = getRandomArray(values.length)
-    setValues(randomArray)
-    setRandomValues(randomArray)
-  }
-
-  const handleSizeChange = (size: string) => {
-    const newArray = getRandomArray(parseInt(size))
-    setValues(newArray)
-    setBaseValues(newArray)
-  }
-
   return (
     <>
       <div className="flex flex-col items-center gap-4 mb-6">
-        <div className="flex gap-3">
-          <ButtonController
-            onClick={() => animate([...values])}
-            disabled={isPlaying}
-          >
-            Start
-          </ButtonController>
-          <ButtonController onClick={handleRestart} disabled={isPlaying}>
-            Restart
-          </ButtonController>
-          <ButtonController onClick={handleRandomize} disabled={isPlaying}>
-            Randomize
-          </ButtonController>
-        </div>
-        <div className="flex justify-center gap-10 w-full px-2">
-          <Slider speed={speed} setSpeed={setSpeed} disabled={isPlaying} />
-          <SelectSize
-            handleSizeChange={handleSizeChange}
-            disabled={isPlaying}
-          />
-        </div>
+        <SortingControllers
+          animate={animate}
+          values={values}
+          setValues={setValues}
+          randomValues={randomValues}
+          setRandomValues={setRandomValues}
+          baseValues={baseValues}
+          setBaseValues={setBaseValues}
+          isPlaying={isPlaying}
+          speed={speed}
+          setSpeed={setSpeed}
+        />
       </div>
       <div className="space-y-4 my-3">
         <div className="flex pt-8 justify-center gap-[6px] items-end">
