@@ -1,5 +1,13 @@
 import React from 'react'
+import AlgorithmWrapperPage from '@/components/Algorithms/AlgorithmWrapperPage'
+import AnimationWrapper from '@/components/Algorithms/AnimationWrapper'
+import CountingInfo from '@/components/Algorithms/Info/Sorting/Counting'
+
 
 export default function page() {
-  return <div>Page not available This feature is currently in development.</div>
+  return (
+    <AlgorithmWrapperPage title={'Counting Sort'} info={<CountingInfo />}>
+      <AnimationWrapper algorithmType='counting' />
+    </AlgorithmWrapperPage>
+  )
 }
