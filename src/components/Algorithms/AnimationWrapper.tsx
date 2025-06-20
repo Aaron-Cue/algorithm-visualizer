@@ -1,19 +1,14 @@
 'use client'
 import React, { useState } from 'react'
-import { getBubbleSortSteps } from '@/lib/Bubble'
-import { Action } from '@/types/algorithms'
+import { algorithmMap } from '@/data/typeAlgorithms'
 import SortingControllers from '../Controls/SortingControllers'
-
-const algorithmMap: Record<string, (arr: number[]) => Action[]> = {
-  bubble: getBubbleSortSteps
-}
 
 export default function AnimationWrapper({
   algorithmType
 }: {
   algorithmType: string
 }) {
-  const initialArray: number[] = [79, 33, 37, 64, 89, 30, 84, 58, 66, 99]
+  const initialArray: number[] = [79, 5, 37, 64, 89, 30, 84, 58, 94, 14]
 
   const [values, setValues] = useState<number[]>([...initialArray])
   const [randomValues, setRandomValues] = useState<number[]>([])
@@ -37,6 +32,13 @@ export default function AnimationWrapper({
       if (step.type === 'swap') {
         const [i, j] = step.indices
         ;[vals[i], vals[j]] = [vals[j], vals[i]]
+        setValues([...vals])
+      }
+
+      if (step.type === 'set') {
+        const [i] = step.indices
+        const [v] = step.values || []
+        vals[i] = v
         setValues([...vals])
       }
 
