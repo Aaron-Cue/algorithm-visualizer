@@ -1,7 +1,7 @@
-import { Action } from "@/types/algorithms"
+import { SortingAction } from '@/types/algorithms'
 
-export function getMergeSortSteps(arr: number[]): Action[] {
-  const steps: Action[] = []
+export function getMergeSortSteps(arr: number[]): SortingAction[] {
+  const steps: SortingAction[] = []
   const copy = [...arr]
 
   function mergeSort(start: number, end: number) {

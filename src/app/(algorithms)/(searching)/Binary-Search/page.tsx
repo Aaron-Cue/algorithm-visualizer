@@ -1,5 +1,15 @@
 import React from 'react'
+import AlgorithmWrapperPage from '@/components/Algorithms/AlgorithmWrapperPage'
+import AnimationSearchingWrapper from '@/components/Algorithms/Animations/AnimationSearchingWrapper'
+import BinarySearchInfo from '@/components/Algorithms/Info/Searching/Binary'
 
 export default function page() {
-  return <div>Page not available This feature is currently in development.</div>
+  return (
+    <AlgorithmWrapperPage
+      title={'Binary Searching'}
+      info={<BinarySearchInfo />}
+    >
+      <AnimationSearchingWrapper typeAlgorithm="binary" />
+    </AlgorithmWrapperPage>
+  )
 }

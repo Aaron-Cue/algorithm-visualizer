@@ -1,8 +1,8 @@
-import { Action } from "@/types/algorithms"
+import { SortingAction } from '@/types/algorithms'
 
 
-export function getQuickSortSteps(arr: number[]): Action[] {
-  const steps: Action[] = []
+export function getQuickSortSteps(arr: number[]): SortingAction[] {
+  const steps: SortingAction[] = []
   const copy = [...arr]
 
   function quicksort(start: number, end: number) {

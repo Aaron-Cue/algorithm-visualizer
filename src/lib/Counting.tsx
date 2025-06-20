@@ -1,7 +1,7 @@
-import { Action } from '@/types/algorithms'
+import { SortingAction } from '@/types/algorithms'
 
-export function getCountingSortSteps(arr: number[]): Action[] {
-  const steps: Action[] = []
+export function getCountingSortSteps(arr: number[]): SortingAction[] {
+  const steps: SortingAction[] = []
   const copy = [...arr]
   const max = Math.max(...copy)
   const count = Array(max + 1).fill(0)

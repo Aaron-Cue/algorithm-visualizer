@@ -1,7 +1,7 @@
-import { Action } from "@/types/algorithms"
+import { SortingAction } from '@/types/algorithms'
 
-export function getBucketSortSteps(arr: number[]): Action[] {
-  const steps: Action[] = []
+export function getBucketSortSteps(arr: number[]): SortingAction[] {
+  const steps: SortingAction[] = []
   const copy = [...arr]
   const n = copy.length
   if (n === 0) return steps

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { algorithmMap } from '@/data/typeAlgorithms'
-import SortingControllers from '../Controls/SortingControllers'
+import SortingControllers from '../../Controls/SortingControllers'
 
 export default function AnimationWrapper({
   algorithmType
