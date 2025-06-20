@@ -1,5 +1,13 @@
 import React from 'react'
+import AlgorithmWrapperPage from '@/components/Algorithms/AlgorithmWrapperPage'
+import AnimationWrapper from '@/components/Algorithms/AnimationWrapper'
+import BucketInfo from '@/components/Algorithms/Info/Sorting/Bucket'
+
 
 export default function page() {
-  return <div>Page not available This feature is currently in development.</div>
+  return (
+    <AlgorithmWrapperPage title={'Bucket Sort'} info={<BucketInfo />}>
+      <AnimationWrapper algorithmType='bucket' />
+    </AlgorithmWrapperPage>
+  )
 }
