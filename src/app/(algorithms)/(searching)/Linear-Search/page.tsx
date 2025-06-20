@@ -9,7 +9,7 @@ export default function page() {
       title={'Linear Searching'}
       info={<LinearSearchInfo />}
     >
-      <AnimationSearchingWrapper typeAlgorithm="linear" />
+      <AnimationSearchingWrapper algorithmType="linear" />
     </AlgorithmWrapperPage>
   )
 }

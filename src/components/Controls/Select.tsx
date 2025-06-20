@@ -8,12 +8,15 @@ import {
   SelectValue
 } from '@/components/ui/select'
 
-export default function SelectSize({ handleSizeChange, disabled }: {
-  handleSizeChange: (size: string) => void
+export default function SelectComponent({
+  handleChange,
+  disabled
+}: {
+  handleChange: ((size: string) => void | ((e: React.ChangeEvent<HTMLInputElement>) => void))
   disabled: boolean
- }) {
+}) {
   return (
-    <Select onValueChange={handleSizeChange} disabled={disabled}>
+    <Select onValueChange={handleChange} disabled={disabled}>
       <SelectTrigger className="w-[40%] max-w-52 bg-gray-300 font-semibold">
         <SelectValue placeholder="10" />
       </SelectTrigger>

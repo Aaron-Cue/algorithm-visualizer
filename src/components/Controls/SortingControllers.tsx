@@ -67,7 +67,7 @@ export default function SortingControllers({
       </div>
       <div className="flex justify-center gap-10 w-full px-2">
         <Slider speed={speed} setSpeed={setSpeed} disabled={isPlaying} />
-        <SelectSize handleSizeChange={handleSizeChange} disabled={isPlaying} />
+        <SelectSize handleChange={handleSizeChange} disabled={isPlaying} />
       </div>
     </>
   )

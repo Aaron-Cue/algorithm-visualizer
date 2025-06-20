@@ -3,3 +3,8 @@ export type SortingAction = {
   indices: number[]
   values?: number[]
 }
+
+export type SearchAction = {
+  type: 'compare' | 'found' | 'not-found'
+  index?: number
+}
