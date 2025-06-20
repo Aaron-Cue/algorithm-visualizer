@@ -1,15 +1,24 @@
 'use client'
 import React, { useState } from 'react'
+import ButtonController from '@/components/Controls/ButtonController'
+import { SearchItem } from '@/components/SearchItem'
 import { algorithmSearchingMap } from '@/data/typeAlgorithms'
 
 export default function AnimationSearchingWrapper({
-  algorithmType
+  algorithmType,
+  speed
 }: {
   algorithmType: string
+  speed: number
 }) {
-  const array = [12, 24, 2, 20, 7, 14, 23, 18, 13, 9, 4, 17]
+  const array = [12, 24, 2, 20, 7, 69, 23, 18, 13, 90, 4, 17, 42]
+  const data = [...array]
+  const searchArray =
+    algorithmType === 'binary' ? [...data].sort((a, b) => a - b) : data
+
   const [target, setTarget] = useState<number>(23)
   const [highlighted, setHighlighted] = useState<number | null>(null)
+  const [range, setRange] = useState<[number, number] | null>(null)
   const [result, setResult] = useState<string | null>(null)
   const [isSearching, setIsSearching] = useState(false)
 
@@ -17,13 +26,23 @@ export default function AnimationSearchingWrapper({
     setIsSearching(true)
     setResult(null)
 
-    const steps = algorithmSearchingMap[algorithmType](array, target)
+    const steps = algorithmSearchingMap[algorithmType](searchArray, target)
+
+    if (algorithmType === 'binary') {
+      setRange([0, searchArray.length - 1])
+    }
+
+    let left = 0
+    let right = searchArray.length - 1
 
     for (let i = 0; i < steps.length; i++) {
       const step = steps[i]
 
       if (step.type === 'compare') {
         setHighlighted(step.index ?? null)
+        if (algorithmType === 'binary') {
+          setRange([left, right])
+        }
       }
 
       if (step.type === 'found') {
@@ -34,10 +53,21 @@ export default function AnimationSearchingWrapper({
 
       if (step.type === 'not-found') {
         setHighlighted(null)
+        setRange(null)
         setResult('Value not found')
       }
 
-      await new Promise(res => setTimeout(res, 300))
+      if (
+        algorithmType === 'binary' &&
+        step.type === 'compare' &&
+        step.index !== undefined
+      ) {
+        const midVal = searchArray[step.index]
+        if (midVal < target) left = step.index + 1
+        else if (midVal > target) right = step.index - 1
+      }
+
+      await new Promise(res => setTimeout(res, speed))
     }
 
     setIsSearching(false)
@@ -51,20 +81,24 @@ export default function AnimationSearchingWrapper({
   return (
     <div className="flex flex-col items-center gap-4 w-full lg:p-4 md:gap-8">
       <div className="flex gap-3 w-full justify-center flex-wrap">
-        {array.map((value, i) => (
-          <div
-            key={i}
-            className={`min-w-8 md:w-10 lg:w-13 h-12 md:h-15 lg:h-17 flex items-center justify-center border rounded ${
-              highlighted === i ? 'bg-yellow-400' : 'bg-blue-500'
-            } text-white`}
-          >
-            {value}
-          </div>
-        ))}
+        {searchArray.map((value, i) => {
+          const isInRange = range && i >= range[0] && i <= range[1]
+          const isHighlighted = highlighted === i
+
+          return (
+            <SearchItem
+              key={i}
+              value={value}
+              index={i}
+              isHighlighted={isHighlighted}
+              isInRange={!!isInRange}
+            />
+          )
+        })}
       </div>
 
       <div className="flex pb-1 gap-2 w-full">
-        <label className="flex flex-col flex-1">
+        <label className="flex flex-col flex-1 text-gray-500">
           Select number to search:
           <input
             type="number"
@@ -74,14 +108,9 @@ export default function AnimationSearchingWrapper({
             disabled={isSearching}
           />
         </label>
-
-        <button
-          onClick={animate}
-          disabled={isSearching}
-          className="px-4 py-1 bg-green-600 text-white rounded disabled:opacity-50 cursor-pointer"
-        >
+        <ButtonController onClick={animate} disabled={isSearching}>
           Search
-        </button>
+        </ButtonController>
       </div>
 
       {result && (

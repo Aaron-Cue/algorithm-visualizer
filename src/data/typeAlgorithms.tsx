@@ -1,3 +1,4 @@
+import { getBinarySearchSteps } from '@/lib/BinarySearch'
 import { getBubbleSortSteps } from '@/lib/Bubble'
 import { getBucketSortSteps } from '@/lib/Bucket'
 import { getCountingSortSteps } from '@/lib/Counting'
@@ -19,7 +20,8 @@ const algorithmSortingMap: Record<string, (arr: number[]) => SortingAction[]> = 
 }
 
 export const algorithmSearchingMap: Record<string, (arr: number[], target:number) => SearchAction[]> = {
-  linear: getLinearSearchSteps
+  linear: getLinearSearchSteps,
+  binary: getBinarySearchSteps
 }
 
 export default algorithmSortingMap

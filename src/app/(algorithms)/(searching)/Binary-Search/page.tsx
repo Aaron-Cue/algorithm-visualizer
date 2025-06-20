@@ -9,7 +9,7 @@ export default function page() {
       title={'Binary Searching'}
       info={<BinarySearchInfo />}
     >
-      <AnimationSearchingWrapper algorithmType="binary" />
+      <AnimationSearchingWrapper algorithmType="binary" speed={1250} />
     </AlgorithmWrapperPage>
   )
 }
