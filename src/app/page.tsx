@@ -1,5 +1,5 @@
 import Card from '@/components/Card'
-import cardsInfo from '@/data/typeAlgorithms'
+import cardsInfo from '@/data/infoAlgorithms'
 
 export default function Home() {
   return (
