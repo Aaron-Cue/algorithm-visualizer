@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import algorithmMap from '@/data/typeAlgorithms'
+import { getRandomArray } from '@/utils/getRandomArray'
 import SortingControllers from '../../Controls/SortingControllers'
 
 export default function AnimationWrapper({
@@ -8,7 +9,7 @@ export default function AnimationWrapper({
 }: {
   algorithmType: string
 }) {
-  const initialArray: number[] = [79, 5, 37, 64, 89, 30, 84, 58, 94, 14]
+  const initialArray: number[] = getRandomArray(10)
 
   const [values, setValues] = useState<number[]>([...initialArray])
   const [randomValues, setRandomValues] = useState<number[]>([])
@@ -65,7 +66,7 @@ export default function AnimationWrapper({
           setSpeed={setSpeed}
         />
       </div>
-      <div className="space-y-4 my-3">
+      <div className="space-y-4 my-3 p-2 md:p-0">
         <div className="flex pt-8 justify-center gap-[6px] items-end">
           {values.map((v, i) => (
             <div

@@ -12,7 +12,7 @@ export default function AlgorithmWrapperPage({
   return (
     <>
       <h1 className="text-4xl font-bold italic mb-12">{title}</h1>
-      <section className="my-12 p-3 pb-0 pt-4 border-1 max-w-4xl mx-auto bg-slate-200">
+      <section className="flex flex-col justify-between my-12 p-3 pb-0 pt-4 border-1 max-w-4xl mx-auto bg-slate-200 h-130">
         {children}
       </section>
       <section>
