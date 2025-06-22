@@ -11,7 +11,7 @@ export default function AnimationSearchingWrapper({
   algorithmType: string
   speed: number
 }) {
-  const array = [12, 24, 2, 20, 7, 69, 23, 18, 13, 90, 4, 17, 42]
+  const array = [12, 24, 2, 20, 7, 69, 23, 18, 13, 90, 4, 17]
   const data = [...array]
   const searchArray =
     algorithmType === 'binary' ? [...data].sort((a, b) => a - b) : data
@@ -79,53 +79,55 @@ export default function AnimationSearchingWrapper({
   }
 
   return (
-    <div className="flex flex-col items-center gap-4 w-full lg:p-4 md:gap-8">
-      <div className="flex gap-3 w-full justify-center flex-wrap">
-        {searchArray.map((value, i) => {
-          const isInRange = range && i >= range[0] && i <= range[1]
-          const isHighlighted = highlighted === i
+    <div className="flex flex-col justify-between my-12 p-4 border-1 max-w-4xl mx-auto bg-slate-200">
+      <div className="flex flex-col items-center gap-8 w-full lg:p-4 md:gap-8 ">
+        <div className="flex gap-3 w-full justify-center flex-wrap">
+          {searchArray.map((value, i) => {
+            const isInRange = range && i >= range[0] && i <= range[1]
+            const isHighlighted = highlighted === i
 
-          return (
-            <SearchItem
-              key={i}
-              value={value}
-              index={i}
-              isHighlighted={isHighlighted}
-              isInRange={!!isInRange}
-            />
-          )
-        })}
-      </div>
-
-      <div className="flex pb-1 gap-2 w-full">
-        <label className="flex flex-col flex-1 text-gray-500">
-          Select number to search:
-          <input
-            type="number"
-            value={target}
-            onChange={handleValueChange}
-            className="max-w-40 sm:max-w-60 lg:max-w-80 px-2 py-1 border rounded bg-slate-400 text-[14px] text-gray-100"
-            disabled={isSearching}
-          />
-        </label>
-        <ButtonController onClick={animate} disabled={isSearching}>
-          Search
-        </ButtonController>
-      </div>
-
-      {result && (
-        <div
-          style={{
-            color:
-              result === 'Value not found'
-                ? 'rgb(220, 38, 38)'
-                : 'rgb(32, 169, 93)'
-          }}
-          className="text-xl font-semibold"
-        >
-          {result}
+            return (
+              <SearchItem
+                key={i}
+                value={value}
+                index={i}
+                isHighlighted={isHighlighted}
+                isInRange={!!isInRange}
+              />
+            )
+          })}
         </div>
-      )}
+
+        <div className="flex pb-1 gap-2 w-full">
+          <label className="flex flex-col flex-1 text-gray-500">
+            Select number to search:
+            <input
+              type="number"
+              value={target}
+              onChange={handleValueChange}
+              className="max-w-40 sm:max-w-60 lg:max-w-80 px-2 py-1 border rounded bg-slate-400 text-[14px] text-gray-100"
+              disabled={isSearching}
+            />
+          </label>
+          <ButtonController onClick={animate} disabled={isSearching}>
+            Search
+          </ButtonController>
+        </div>
+
+        {result && (
+          <div
+            style={{
+              color:
+                result === 'Value not found'
+                  ? 'rgb(220, 38, 38)'
+                  : 'rgb(32, 169, 93)'
+            }}
+            className="text-xl font-semibold"
+          >
+            {result}
+          </div>
+        )}
+      </div>
     </div>
   )
 }

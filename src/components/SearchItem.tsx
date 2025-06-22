@@ -20,7 +20,7 @@ export function SearchItem({
   return (
     <div
       key={index}
-      className={`min-w-8 md:w-10 lg:w-13 h-12 md:h-15 lg:h-17 flex items-center justify-center border rounded ${bgColor} text-white`}
+      className={`min-w-18 lg:min-w-14 h-14 flex items-center justify-center border rounded ${bgColor} text-white`}
     >
       {value}
     </div>

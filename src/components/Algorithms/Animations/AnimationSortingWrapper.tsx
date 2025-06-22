@@ -51,7 +51,7 @@ export default function AnimationWrapper({
   }
 
   return (
-    <>
+    <div className="flex flex-col justify-between my-12 p-3 pb-0 pt-4 border-1 max-w-4xl mx-auto bg-slate-200 h-130">
       <div className="flex flex-col items-center gap-4 mb-6">
         <SortingControllers
           animate={animate}
@@ -79,6 +79,6 @@ export default function AnimationWrapper({
           ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }

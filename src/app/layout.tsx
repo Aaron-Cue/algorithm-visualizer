@@ -80,7 +80,7 @@ export default function RootLayout({
         className={`${inter.className} antialiased min-h-dvh flex flex-col`}
       >
         <Header />
-        <main className="flex-1 container mx-auto px-6 max-w-7xl sm:px-8 md:px-12 lg:px-16 my-20">
+        <main className="flex-1 container mx-auto px-6 max-w-7xl sm:px-8 md:px-12 lg:px-16 my-20 mb-0">
           {children}
         </main>
         <footer className="bg-zinc-900 text-white text-center py-4">
