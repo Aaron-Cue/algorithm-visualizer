@@ -43,13 +43,20 @@ const TrieAnimation = () => {
         const siblingIndex = siblings.length
         const parentNode = newNodes.find(n => n.id === currentParent)
 
-        const totalWidth = siblings.length * horizontalSpacing
+        const maxSpacing = 160
+        const minSpacing = 40
+        const perNodeSpacing = Math.max(
+          minSpacing,
+          maxSpacing - currentLevel * 20
+        )
+
         const x =
-          (parentNode?.x ?? 200) -
-          totalWidth / 2 +
-          siblingIndex * horizontalSpacing
+          (parentNode?.x ?? 200) +
+          (siblingIndex - Math.floor(siblings.length / 2)) * perNodeSpacing
+
         const y = 50 + currentLevel * verticalSpacing
-        const newNodeId = currentParent + letter + i // id único
+        const newNodeId = currentParent + letter + i
+
 
         newNodes.push({
           id: newNodeId,
