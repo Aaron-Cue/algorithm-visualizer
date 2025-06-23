@@ -44,7 +44,7 @@ export default function NavMenu({
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
       />
-      <NavItem
+      {/* <NavItem
         href="#"
         label="Graphs"
         setOpen={setOpen}
@@ -66,7 +66,7 @@ export default function NavMenu({
         subItems={['Dynamic-Programming', 'Backtracking', 'Greedy']}
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
-      />
+      /> */}
     </nav>
   )
 }
