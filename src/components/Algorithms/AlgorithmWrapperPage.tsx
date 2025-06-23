@@ -16,7 +16,7 @@ export default function AlgorithmWrapperPage({
         {children}
       </section>
       <section>
-        <h2 className="text-[30px] text-slate-700 font-bold ml-20 mt-4 pt-4">
+        <h2 className="text-[30px] text-slate-700 font-bold ml-6 md:ml-20 mt-4 pt-4">
           About algorithm
         </h2>
         <div className='px-2'>{info}</div>
