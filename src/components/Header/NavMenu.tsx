@@ -40,7 +40,7 @@ export default function NavMenu({
         href="#"
         label="Trees"
         setOpen={setOpen}
-        subItems={['Bst', 'Avl', 'Trie']}
+        subItems={['Bst', 'Trie']}
         activeMenu={activeMenu}
         setActiveMenu={setActiveMenu}
       />
