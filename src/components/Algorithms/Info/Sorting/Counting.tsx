@@ -8,7 +8,7 @@ export default function Counting() {
     increment count[element]
   for i from 1 to length of count:
     count[i] += count[i - 1]
-  build the output array by placing elements at their correct positions`
+  Place elements in correct positions to build the array.`
 
   return (
     <InfoWrapper

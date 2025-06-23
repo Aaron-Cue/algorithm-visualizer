@@ -33,7 +33,7 @@ export default function InfoWrapper({
         <div className="flex-3">
           <h3 className="text-2xl font-semibold mb-2">Pseudocode</h3>
           <pre
-            className="ml-1 border border-white p-4 bg-slate-200 rounded text-[16px] leading-[25px]
+            className="ml-1 border border-white p-2 md:p-4 bg-slate-200 rounded text-[12px] sm:text-[16px] leading-[25px]
 "
           >
             {pseudocode}
