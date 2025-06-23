@@ -8,3 +8,10 @@ export type SearchAction = {
   type: 'compare' | 'found' | 'not-found'
   index?: number
 }
+
+export type Node = {
+  id: number
+  x: number
+  y: number
+  parent: number | null
+}
