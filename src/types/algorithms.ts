@@ -15,3 +15,11 @@ export type Node = {
   y: number
   parent: number | null
 }
+
+export type TrieNode = {
+  id: string
+  label: string
+  x: number
+  y: number
+  parent: string | null
+}
