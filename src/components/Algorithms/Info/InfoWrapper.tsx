@@ -14,7 +14,7 @@ export default function InfoWrapper({
   complexity
 }: InfoWrapperProps) {
   return (
-    <div className="p-4 sm:p-8 border border-white max-w-[968px] text-black space-y-6 lg:mx-auto">
+    <div className="sm:p-8 border border-white max-w-[968px] text-black space-y-6 lg:mx-auto">
       <div className="mb-12 mt-4">
         <h3 className="text-2xl font-semibold mb-2">Explanation</h3>
         <p className="ml-1 max-w-3xl text-sm leading-relaxed">{description}</p>
@@ -29,11 +29,11 @@ export default function InfoWrapper({
         </ol>
       </div>
 
-      <div className="flex flex-col sm:flex-row justify-between gap-8 my-12">
+      <div className="flex flex-col md:flex-row justify-between gap-8 my-12">
         <div className="flex-3">
           <h3 className="text-2xl font-semibold mb-2">Pseudocode</h3>
           <pre
-            className="ml-1 border border-white p-2 md:p-4 bg-slate-200 rounded text-[12px] sm:text-[16px] leading-[25px]
+            className="ml-1 border border-white p-2 md:p-4 bg-slate-200 rounded overflow-x-auto text-[14px] sm:text-[16px] leading-[25px]
 "
           >
             {pseudocode}
